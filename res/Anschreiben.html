@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bewerbung_dialogika</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        @font-face {
+            font-family: "OpenSans";
+            src: url("fonts/OpenSans-Light.ttf");
+        }
+
+        @font-face {
+            font-family: "OpenSansBold";
+            src: url("fonts/OpenSans-Bold.ttf");
+        }
+
+        html {
+            hyphens: none;
+        }
+
+        body {
+            font-family: "OpenSans";
+            font-size: 10.6pt;
+        }
+
+        #p {
+            margin-bottom: 0.5em;
+            margin-top: 0.5em;
+            margin-block-start: 0.5em;
+            margin-block-end: 0.5em;
+        }
+
+        @page {
+            margin-left: 25mm;
+            margin-top: 27mm;
+            margin-bottom: 10mm;
+
+            @bottom-right {
+                font-family: "OpenSans";
+                font-size: 9pt;
+                /*content: "Seite "counter(page) " von "counter(pages);*/
+            }
+
+            /* @top-center {
+                font-family: "OpenSans";
+                text-align: center;
+                font-size: 8pt;
+                content: "Thomas Eppers \2219  Schutzbergstr. 14 \2219  66119 Saarbrücken \A Tel.: 0176 - 202 76 940 \2219  E-Mail: thomas-eppers@t-online.de";
+                content: "";
+            } */
+        }
+
+        @page: first {
+            @top-center {
+                font-family: "OpenSans";
+                text-align: center;
+                font-size: 8pt;
+                content: "Thomas Eppers \2219  Schutzbergstr. 14 \2219  66119 Saarbrücken \A Tel.: 0176 - 202 76 940 \2219  E-Mail: thomas-eppers@t-online.de" !important;
+            }
+        }
+
+        #address {
+            xoutline: solid red thin;
+            position: relative;
+            height: 45mm;
+            width: 85mm;
+            margin-left: -5mm;
+            padding-left: 5mm;
+            margin-bottom: 8.46mm;
+        }
+
+        #sender {
+            visibility: hidden;
+            xoutline: solid red thin;
+            height: 5mm;
+            font-size: 9pt;
+            margin-bottom: 12.7mm;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        #receiver {}
+
+        #info {}
+
+        #datewrap {
+            text-align: end;
+            margin-bottom: 8.46mm;
+        }
+
+        #subject {
+            font-weight: 600;
+            margin-bottom: 8.46mm;
+        }
+
+        #sigwrapper {
+            position: relative;
+            height: 3em;
+        }
+
+        #sig {
+            position: absolute;
+            height: 5em;
+            left: 1em;
+            bottom: -1em;
+        }
+
+        .unbreakable {
+            break-inside: avoid !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="address">
+        <div id="sender">Thomas Eppers, Schutzbergstr. 14, 66119 Saarbrücken</div>
+        <div id="receiver">DIaLOGIKa GmbH<br>
+            Frau Judith Engelkamp<br>
+            Pascalschacht 1<br>
+            66125 Saarbrücken
+        </div>
+    </div>
+    <div id="info">
+
+    </div>
+    <div id="datewrap">Saarbrücken, den <span id="date"></span></div>
+    <div id="subject">Bewerbung zum Softwareentwickler</div>
+    <p>Sehr geehrte Frau Engelkamp,</p>
+
+    <p>Gute, innovative Software zu designen, zu programmieren und damit anspruchsvolle Aufgaben zu lösen ist
+        meine Leidenschaft und der Begriff „Digitalisierung“ nicht nur eine Phrase für mich. Ihre
+        Stellenausschreibung auf dem Portal XING habe ich daher mit großem Interesse gelesen und sehe die Arbeit in Ihrem 
+        Hause als das richtige Ventil für meine Passion für neue Technologien.
+    </p>
+
+    <p>Meine duale Ausbildung zum Fachinformatiker für Anwendungsentwicklung bei der RealObjects Gesellschaft für
+        objektorientierte Softwareentwicklung mbH habe ich im Januar 2019 abgeschlossen. Hier habe ich sowohl
+        objekt- und ereignisorientierte Software zur internen Nutzung unter Verwendung modernster
+        Laufzeitumgebungen und Programmiersprachen (bspw. Node.js) erschaffen als auch Module und Klassen für das in
+        Java entwickelte Softwareprodukt „PDFreactor“, ein leistungsstarker HTML-zu-PDF-Konverter. Das Thema meines
+        Abschlussprojekts war die Entwicklung einer cloudbasierten Webanwendung zum selbständigen Managen und
+        maschinellen Verifizieren
+        von Abonnements.</p>
+
+    <p>Derzeit befinde ich mich noch in einem Beschäftigungsverhältnis bei GK Software SE,
+        welche sich auf Software-Lösungen auf der Basis von Java und Spring sowie Dienstleistungen für den Betrieb von
+        Filialen großer
+        Einzelhandelsunternehmen spezialisiert hat. Leider bietet diese Stelle nicht die erhoffte
+        Innovation und Abwechslung, jedoch gewährte sie mir Einblicke
+        in die Abläufe für die Koordination von größeren Teams und Gestaltung sowie Nutzung proprietärer Frameworks.</p>
+
+    <p>Durch mein Studium der Physik und der Mikrotechnologie und Nanostrukturen an der Universität des Saarlandes
+        habe ich nicht nur selbstständiges und eigenverantwortliches Arbeiten gelernt, sondern auch eine logische und
+        abstrakte Denkweise entwickelt, welche mir die Analyse und Konzeption von Software erheblich erleichtert und
+        diese prägt.</p>
+
+    <!--
+    <p>Als Leitungsmitglied der Sommerfreizeit der Kirchengemeinde St. Jakob in Saarbrücken war ich mitverantwortlich
+        für die Führung und Koordination eines bis zu 45 Personen starken Betreuerteams. Zu meinen Aufgaben gehörte
+        hier die Planung, Vorbereitung und Abwicklung dieser 10-tägigen Kinder- und Jugendferienreise mit einer
+        Teilnehmerzahl von über 80 Kindern und Jugendlichen.
+    </p><!--  -->
+    <!--
+    <p>Teamfähigkeit, Bewusstsein für Führungsverantwortung und Kreativität sind Eigenschaften, die ich mir in meiner
+        Tätigkeit als Leitungsmitglied der Sommerfreizeit St. Jakob aneignen und vertiefen konnte.</p>
+    <!--  -->
+    <!--
+    <p>Meine Zeit im Rettungsdienst bei der Berufsfeuerwehr Saarbrücken und dem Arbeiter-Samariter-Bund in
+        Brebach/Fechingen hingegen lehrte mich, auch unter Druck einen kühlen Kopf zu bewahren, zielorientiert im Team zu
+        Arbeiten und mich dabei auf das Wesentliche zu konzentrieren.</p>
+        -->
+    <div class="unbreakable">
+        <!--  -->
+        <p>Habe ich Ihr Interesse geweckt? Dann freue ich mich sehr über eine Einladung zum Bewerbungsgespräch.</p>
+        <!--  -->
+        <!--
+        <p>Über eine Einladung zum Bewerbungsgespräch freue ich mich sehr.</p>
+        -->
+        <p>Mit freundlichen Grüßen,</p>
+        <div id="sigwrapper">
+            <img src="Fotos/Sig_TE_klein.png" id="sig">
+        </div>
+        <p>Thomas Eppers</p>
+    </div>
+    <script>
+        function toStr(value) {
+            let s = value.toString();
+            console.log(s);
+            while (s.length < 2) s = "0" + s;
+            return s;
+        }
+        let date = new Date(Date.now());
+        let datestring = [toStr(date.getDate()), toStr(date.getMonth() + 1), date.getFullYear()].join(".");
+        document.querySelector("#date").innerHTML = datestring;
+    </script>
+</body>
+
+</html>

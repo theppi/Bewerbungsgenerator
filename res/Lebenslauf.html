@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/glyphicons.css">
+    <style>
+        :root {
+        --main-color: #ccc; 
+        --second-color: #aaa;
+    }
+        @font-face {
+            font-family: "OpenSans";
+            src: url("fonts/OpenSans-Light.ttf");
+        }
+
+        @font-face {
+            font-family: "OpenSansBold";
+            src: url("fonts/OpenSans-Bold.ttf");
+        }
+
+        body {
+            font-family: "OpenSans";
+            font-size: 11pt;
+        }
+
+        @media screen {
+            body {
+                width: 17cm;
+                height: 24cm;
+                padding: 2cm;
+                font-family: "OpenSans";
+            }
+        }
+
+        img.titlefoto {
+            xposition: relative;
+            xfloat: right;
+            width: 100%;
+            xright: 0;
+            border-bottom-right-radius: 2em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            break-inside: avoid;
+            margin-bottom: 0.9em;
+        }
+
+        tr.row td.left {
+            text-align: end;
+            font-weight: 600;
+        }
+
+        td {
+            vertical-align: top;
+            padding-right: 0.5em;
+            margin: 0;
+            height: 1em;
+            padding-top: 0.25em;
+            padding-bottom: 0.25em;
+            padding-left: 0.25em;
+            position: relative;
+        }
+
+        tr.row.head td.left {
+            padding: 0;
+        }
+
+        td.left {
+            width: 38.2%;
+        }
+
+        td.right {
+            border-left: solid var(--main-color) 1px;
+        }
+
+        td.right.foot {
+            border: none;
+        }
+
+        tr.heading td,
+        tr.row.head td.right,
+        td:empty {
+            border: none !important;
+            overflow: visible;
+        }
+
+        tr.heading td::before,
+        tr.row.head td.right::before {
+            display: none;
+        }
+
+        td.right {
+            width: 61.8%;
+        }
+
+        div.header-borders {
+            padding-left: 1em;
+            padding-right: 1em;
+            text-align: start;
+            width: calc(100% - 2em - 1.5px);
+            margin-bottom: -0.5px;
+            background-color: var(--main-color);
+            xbackground-image: linear-gradient(to right bottom, var(--main-color), var(--main-color) 61.8%, var(--second-color)) ;
+            border: solid var(--main-color) 1px;
+            border-top-right-radius: 1em;
+            border-bottom-left-radius: 1em;
+            position: absolute;
+            top: 1px;
+        }
+
+        div.footer-borders {
+            position: absolute;
+            top: -1px;
+            left: -0.5px;
+            border-bottom-left-radius: 1em;
+            border-bottom-right-radius: 1em;
+            width: calc(100% - 0.75em);
+            height: 1em;
+            border-left: solid var(--main-color) 1px;
+            border-bottom: solid var(--main-color) 1px;
+        }
+
+        div.image {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            height: 6.3cm;
+            width: 4.45cm;
+            xoutline: solid red thin;
+            overflow: hidden;
+            border-bottom-left-radius: 1em;
+            border-top-right-radius: 1em;
+        }
+
+        div.image img {
+            position: absolute;
+            height: 100%;
+            right: 0;
+            border-bottom-left-radius: 1em;
+            border-top-right-radius: 1em;
+        }
+
+        tr.row td.right table td:nth-child(2n-1) {
+            xtext-align: end;
+        }
+
+        tr.row td.right table td:nth-child(2n) {
+            max-width: 5em;
+        }
+
+        span.bold {
+            xfont-family: "OpenSansBold";
+            font-weight: 600;
+        }
+
+        span.italic {
+            xfont-weight: 600;
+            font-style: italic;
+        }
+
+        div.break {
+            break-after: always !important;
+        }
+
+        div.titlebanner {
+            xposition: relative;
+            width: calc(100% - 4em);
+            height: calc(6.49cm - 4em);
+            xbackground-color: var(--main-color);
+            background-image: linear-gradient(to right bottom, var(--main-color), var(--main-color) 61.8%, var(--second-color)) ;
+            border-bottom-left-radius: 2em;
+            border-top-right-radius: 2em;
+            padding: 2em;
+        }
+
+        div.titlebanner h1 {
+            margin-top: 0.5em;
+            font-size: 32pt;
+        }
+
+        div.titlefotowrapper {
+            xposition: relative;
+            width: 61.8%;
+            xborder-bottom-right-radius: 2em;
+            overflow: hidden;
+            text-align: right;
+            float: right;
+            clear: right;
+        }
+
+        div.title-borders {
+            padding: 2em;
+            border-bottom-left-radius: 2em;
+            border-top-right-radius: 2em;
+            background-color: var(--main-color);
+
+        }
+
+        div.titleinfo {
+            float: left;
+            width: calc(38.2% - 2em);
+            padding: 1em;
+            text-align: end;
+        }
+        div.skills {
+            float: left;
+            clear: both;
+            width: calc(61.8% - 2em);
+            xbackground-color: var(--main-color);
+            background-image: linear-gradient(to right bottom, var(--main-color), var(--main-color) 61.8%, var(--second-color)) ;
+            border-bottom-right-radius: 1em;
+            border-top-left-radius: 1em;
+            padding: 1em;
+            text-align: end;
+            font-size: 11pt;
+            font-weight: 600;
+            margin: auto;
+        }
+
+        div.titleplaceholder {
+            height: 10em;
+            float: left;
+            clear: both;
+        }
+
+        div.linewrapper {
+            position: absolute;
+            bottom: 2em;
+            width: 100%;
+            height: 2em;
+            float: left;
+            clear: both;
+        }
+
+        div.line {
+
+            width: calc(100% - 1em);
+        }
+
+        div.line.left {
+            height: 1em;
+            margin-right: 1em;
+            border-bottom: solid var(--main-color) 1px;
+            border-left: solid var(--main-color) 1px;
+            border-bottom-left-radius: 1em;
+        }
+
+        div.line.right {
+            height: 1em;
+            margin-left: 1em;
+            margin-top: -1px;
+            border-top-right-radius: 1em;
+            border-top: solid var(--main-color) 1px;
+            border-right: solid var(--main-color) 1px;
+        }
+
+        div.attachments {
+            width: calc(100% - 2em);
+            bottom: 0;
+            left: 1em;
+            position: absolute;
+            text-align: end;
+            padding-right: 1em;
+        }
+        div.sign div.linewrapper {
+            bottom: -1em;
+            z-index: -5;
+        }
+        div.sign div.linewrapper > div.line.right {
+            margin-top: -2px !important;
+        }
+        div.sign div.linewrapper > * {
+            border-width: 2px !important;
+            border-left: none !important;
+            border-right: none !important;
+        }
+
+        @page {
+            @bottom-center {
+                font-family: "OpenSans";
+                text-align: center;
+                font-size: 8pt;
+                content: "Thomas Eppers \2219  Schutzbergstr. 14 \2219  66119 Saarbrücken \A Tel.: 0176 - 202 76 940 \2219  E-Mail: thomas-eppers@t-online.de";
+            }
+        }
+
+        @page:first {
+            @bottom-center {
+                content: "";
+            }
+        }
+
+        div.sign {
+            height: 10em;
+            margin-top: 10em;
+            float: right;
+            position: relative;
+            width: 61.8%;
+            xborder-bottom: solid var(--main-color) 2px;
+            xborder-bottom-right-radius: 1em;
+            xborder-bottom-left-radius: -1em;
+        }
+
+        img.sig {
+            width: 4cm;
+            margin-left: 2cm;
+        }
+
+        .skills .glyphicon:before {
+            margin-left: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="titlebanner">
+        <h1>Bewerbung</h1>
+        <h2>zum Softwareentwickler</h2>
+        <div id="receiver">
+            <h3>bei DIaLOGIKa GmbH</h3>
+        </div>
+    </div>
+    <div class="titlefotowrapper">
+        <img class="titlefoto" src="Fotos/316bew-3b_klein.jpg">
+    </div>
+    <div class="titleinfo">
+        <p>Thomas Eppers</p>
+        <p>Schutzbergstr. 14<br>66119 Saarbrücken</p>
+        <p>0176 – 202 76 940</p>
+        <p>thomas-eppers@t-online.de</p>
+    </div>
+    <div class="skills">
+        <p>Java, HTML, CSS und JavaScript<span class="glyphicon glyphicon-ok"></span></p>
+        <p>Objektorientiert und strukturiert Programmieren<span class="glyphicon glyphicon-ok"></span></p>
+        <p>RESTful WebServices und SQL<span class="glyphicon glyphicon-ok"></span></p>
+        <p>Analytisch und Kreativ, Selbständig und Teamfähig<span class="glyphicon glyphicon-ok"></span></p>
+    </div>
+    <div class="titleplaceholder"></div>
+    <div class="linewrapper">
+        <div class="line left"></div>
+        <div class="line right"></div>
+
+    </div>
+    <div class="attachments">
+        <p>Anlagen: Anschreiben, Lebenslauf, Zeugnisse</p>
+    </div>
+
+
+    <div class="break"></div>
+
+    <table>
+        <tr class="heading">
+            <td class="left"></td>
+            <td class="right">
+                <h2>Lebenslauf</h2>
+            </td>
+        </tr>
+        <tr class="row head">
+            <td class="left">
+                <div class="header-borders">Persönliche Daten</div>
+            </td>
+            <td class="right"></td>
+        </tr>
+        <tr class="row">
+            <td class="left">Geburtsdatum/-ort</td>
+            <td class="right">01.06.1987, Saarbrücken</td>
+        </tr>
+        <tr class="row">
+            <td class="left">Staatsangehörigkeit</td>
+            <td class="right">Deutsch</td>
+        </tr>
+        <tr class="row">
+            <td class="left">Familienstand</td>
+            <td class="right">ledig</td>
+        </tr>
+        <tr class="row">
+            <td class="left"></td>
+            <td class="right foot">
+                <div class="footer-borders"></div>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr class="row head">
+            <td class="left">
+                <div class="header-borders">Ausbildung</div>
+            </td>
+            <td class="right"></td>
+        </tr>
+        <tr class="row">
+            <td class="left">01.08.2016 bis 14.01.2019</td>
+            <td class="right"><span class="bold">Duale Ausbildung</span><br>
+                Fachinformatiker Anwendungsentwicklung<br>
+                RealObjects - Gesellschaft für objektorientierte Softwareentwicklung mbH<br>
+                Abschluss: Berufsschule (1,0) / IHK Prüfung (2,0)</td>
+        </tr>
+        <tr class="row">
+            <td class="left">01.10.2011 bis 31.07.2016</td>
+            <td class="right"><span class="bold">Studium</span><br>
+                Mikrotechnologie und Nanostrukturen Bachelor<br>
+                Universität des Saarlandes (ohne Abschluss; &Oslash; 3,0)</td>
+        </tr>
+        <tr class="row">
+            <td class="left">01.10.2007 bis 30.09.2011</td>
+            <td class="right"><span class="bold">Studium</span><br>
+                Physik Bachelor<br>
+                Universität des Saarlandes (ohne Abschluss; &Oslash; 3,6)</td>
+        </tr>
+        <tr class="row">
+            <td class="left">04.09.1997 bis 23.06.2006</td>
+            <td class="right"><span class="bold">Schule</span><br>Marienschule Saarbrücken<br>
+                Abschluss: Abitur (2,5)</td>
+        </tr>
+
+        <tr class="row">
+            <td class="left"></td>
+            <td class="right foot">
+                <div class="footer-borders"></div>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr class="row head">
+            <td class="left">
+                <div class="header-borders">Praktika und Berufserfahrung</div>
+            </td>
+            <td class="right"></td>
+        </tr>
+        <tr class="row">
+            <td class="left">Seit 01.02.2019</td>
+            <td class="right">Anstellung als Softwareentwickler in Vollzeit <br> bei GK Software SE</td>
+        </tr>
+        <tr class="row">
+            <td class="left">Seit 01.10.2018</td>
+            <td class="right">Freier Mitarbeiter als Webentwickler<br> bei PRYME|Marketing</td>
+        </tr>
+        <!--
+        <tr class="row">
+            <td class="left">10.08.2015 bis 09.10.2015</td>
+            <td class="right">Industriepraktikum bei NEUE HALBERG-GUSS GMBH Werk Brebach</td>
+        </tr>
+        -->
+        <tr class="row">
+            <td class="left">01.10.2010 bis 31.07.2016</td>
+            <td class="right">Aushilfe als Schreib- und Bürokraft bei Hornung Hausverwaltung GmbH in Saarbrücken</td>
+        </tr>
+        <tr class="row">
+            <td class="left">2007 bis 2012</td>
+            <td class="right">Tätigkeit als ehrenamtlicher Rettungssanitäter bei ASB Brebach/Fechingen und
+                Berufsfeuerwehr Saarbrücken</td>
+        </tr>
+        <tr class="row">
+            <td class="left">01.10.2006 bis 30.06.2007</td>
+            <td class="right">Zivildienst im Rettungsdienst bei der Berufsfeuerwehr Saarbrücken</td>
+        </tr>
+        <tr class="row">
+            <td class="left">2001 bis 2014</td>
+            <td class="right">Jugendbetreuer in der Sommerfreizeit der Jugend der Gemeinde St. Jakob in Saarbrücken,
+                2010 bis 2013 als Leitung</td>
+        </tr>
+
+        <tr class="row">
+            <td class="left"></td>
+            <td class="right foot">
+                <div class="footer-borders"></div>
+            </td>
+        </tr>
+
+    </table>
+    <table>
+        <tr class="row head">
+            <td class="left">
+                <div class="header-borders">Skills</div>
+            </td>
+            <td class="right"></td>
+        </tr>
+        <tr class="row">
+            <td class="left">Programmiersprachen</td>
+            <td class="right">
+                Java, HTML, CSS, JavaScript, Node.js, C/C++, PHP, VBA,
+                Python, MatLab, C#, .NET, TypeScript, JavaCC, LaTex, Ant
+            </td>
+        </tr>
+        <tr class="row">
+            <td class="left">Betriebssysteme</td>
+            <td class="right">Linux, Windows</td>
+        </tr>
+        <tr class="row">
+            <td class="left">Datenbanken</td>
+            <td class="right">MongoDB, (My)SQL, DynamoDB, Oracle Database</td>
+        </tr>
+        <tr class="row">
+            <td class="left">EDV</td>
+            <td class="right">MS Word, MS Excel, MS PowerPoint, LibreOffice</td>
+        </tr>
+        <tr class="row">
+            <td class="left">Frameworks</td>
+            <td class="right">Amazon Webservices (AWS), jQuery, AngularJS, Bootstrap, Express.js, Spring, Wordpress</td>
+        </tr>
+        <tr class="row">
+            <td class="left">Paradigmen & Methoden</td>
+            <td class="right">Continous Integration, Objektorientierte Programmierung, RESTful Webservices,
+                Software-as-a-Service (SaaS)</td>
+        </tr>
+
+        <tr class="row">
+            <td class="left"></td>
+            <td class="right foot">
+                <div class="footer-borders"></div>
+            </td>
+        </tr>
+
+    </table>
+    <table>
+        <tr class="row head">
+            <td class="left">
+                <div class="header-borders">Sonstige Qualifikationen</div>
+            </td>
+            <td class="right"></td>
+        </tr>
+        <tr class="row">
+            <td class="left">2007</td>
+            <td class="right">Rettungssanitäter</td>
+        </tr>
+        <tr class="row">
+            <td class="left">2006</td>
+            <td class="right">Rettungshelfer</td>
+        </tr>
+        <tr class="row">
+            <td class="left">Fremdsprachenkenntnisse</td>
+            <td class="right">Englisch (fließend in Wort und Schrift)<br>
+                Französisch (Grundkenntnisse)</td>
+        </tr>
+        <tr class="row">
+            <td class="left">Führerschein</td>
+            <td class="right">Klasse B</td>
+        </tr>
+        <tr class="row">
+            <td class="left"></td>
+            <td class="right foot">
+                <div class="footer-borders"></div>
+            </td>
+        </tr>
+    </table>
+
+    <div class="sign">
+        <p>Saarbrücken, den <span id="date"></span></p>
+        <img src="Fotos/Sig_TE_klein.png" class="sig">
+        <div class="linewrapper">
+            <div class="line left"></div>
+            <div class="line right"></div>
+
+        </div>
+    </div>
+<script>
+    function toStr(value) {
+        let s = value.toString();
+        console.log(s);
+        while(s.length < 2) s = "0" + s;
+        return s;
+    }
+    let date = new Date(Date.now());
+    let datestring = [toStr(date.getDate()), toStr(date.getMonth()+1),date.getFullYear()].join(".");
+    document.querySelector("#date").innerHTML = datestring;
+</script>
+</body>
+
+</html>
